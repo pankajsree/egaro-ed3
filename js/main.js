@@ -4,12 +4,19 @@ var topContacts;
 
 var prevScrollLocation;
 
-var carousel;
-var carouselCount;
-var dots;
-var currentSlide;
-var dot;
-var tempSlide;
+var oneWidth;
+var threeWidth;
+var fiveWidth;
+var sevenWidth;
+
+var twoHeight;
+var fourHeight;
+var sixHeight;
+
+var windowWidth;
+var windowHeight;
+
+var animateDuration;
 
 function initialiseTop() {
     topCarousel = $("#carousel").offset().top;
@@ -17,32 +24,104 @@ function initialiseTop() {
     topContacts = $("#contacts").offset().top;
 }
 
-function plusSlides(ctrl) {
-    carousel[currentSlide].classList.remove("active");
-    dot[currentSlide].classList.remove("dot-active");
-    if(ctrl == 0) {
-        currentSlide = tempSlide;
-    }
-    else if(ctrl == -1 && currentSlide == 0) {
-        currentSlide = carouselCount - 1;
-    }
-    else if(ctrl == 1 && currentSlide == carouselCount - 1) {
-        currentSlide = 0;
-    }
-    else {
-        currentSlide += ctrl;
-    }
-    carousel[currentSlide].classList.add("active");
-    dot[currentSlide].classList.add("dot-active");
+
+function initialiseTiles() {
+
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+
+    oneWidth = 0.125 * windowWidth;
+    threeWidth = 0.125 * windowWidth;
+    fiveWidth = 0.25 * windowWidth;
+    sevenWidth = 0.5 * windowWidth;
+
+    twoHeight = 0.125 * windowHeight;
+    fourHeight = 0.25 * windowHeight;
+    sixHeight = 0.5 * windowHeight;
+}
+
+function explore() {
+    $("#cover").show();
+    anime({
+        targets: '.one',
+        width: { value: oneWidth, easing: 'linear', duration: animateDuration }
+    });
+    setTimeout(function() { $('.one .archive-topic').css('display', 'inline-block') }, 1000 );
+    anime({
+        targets: '.two',
+        height: { value: twoHeight, easing: 'linear', duration: animateDuration, delay: 200 }
+    });
+    setTimeout(function() { $('.two .archive-home').css('display', 'inline-block') }, 1200 );
+    anime({
+        targets: '.three',
+        width: { value: threeWidth, easing: 'linear', duration: animateDuration, delay: 400 }
+    });
+    setTimeout(function() { $('.three .archive-topic').css('display', 'inline-block') }, 1400 );
+    anime({
+        targets: '.four',
+        height: { value: fourHeight, easing: 'linear', duration: animateDuration, delay: 600 }
+    });
+    setTimeout(function() { $('.four .archive-topic').css('display', 'inline-block') }, 1600 );
+    anime({
+        targets: '.five',
+        width: { value: fiveWidth, easing: 'linear', duration: animateDuration, delay: 800 }
+    });
+    setTimeout(function() { $('.five .archive-topic').css('display', 'inline-block') }, 1800 );
+    anime({
+        targets: '.six',
+        height: { value: sixHeight, easing: 'linear', duration: animateDuration, delay: 1000 }
+    });
+    setTimeout(function() { $('.six .archive-topic').css('display', 'inline-block') }, 2000 );
+    anime({
+        targets: '.seven',
+        width: { value: sevenWidth, easing: 'linear', duration: animateDuration, delay: 1200 }
+    });
+    setTimeout(function() { $('.seven .archive-topic').css('display', 'inline-block') }, 2200 );
+}
+
+function closeExplore() {
+    anime({
+        targets: '.one',
+        width: { value: 0, easing: 'linear', duration: animateDuration }
+    });
+    setTimeout(function() { $('.one .archive-topic').css('display', 'none') }, 100 );
+    anime({
+        targets: '.two',
+        height: { value: 0, easing: 'linear', duration: animateDuration, delay: 200 }
+    });
+    setTimeout(function() { $('.two .archive-home').css('display', 'none') }, 100 );
+    anime({
+        targets: '.three',
+        width: { value: 0, easing: 'linear', duration: animateDuration, delay: 400 }
+    });
+    setTimeout(function() { $('.three .archive-topic').css('display', 'none') }, 100 );
+    anime({
+        targets: '.four',
+        height: { value: 0, easing: 'linear', duration: animateDuration, delay: 600 }
+    });
+    setTimeout(function() { $('.four .archive-topic').css('display', 'none') }, 100 );
+    anime({
+        targets: '.five',
+        width: { value: 0, easing: 'linear', duration: animateDuration, delay: 800 }
+    });
+    setTimeout(function() { $('.five .archive-topic').css('display', 'none') }, 100 );
+    anime({
+        targets: '.six',
+        height: { value: 0, easing: 'linear', duration: animateDuration, delay: 1000 }
+    });
+    setTimeout(function() { $('.six .archive-topic').css('display', 'none') }, 100 );
+    anime({
+        targets: '.seven',
+        width: { value: 0, easing: 'linear', duration: animateDuration, delay: 1200 }
+    });
+    setTimeout(function() { $('.seven .archive-topic').css('display', 'none') }, 100 );
+    setTimeout(function() { $("#cover").toggle(); }, 2300);
 }
 
 $(document).ready(function() {
 
     // initialiseTop();
     // prevScrollLocation = 0;
-    carousel = document.getElementsByClassName("slides");
-    carouselCount = carousel.length;
-    dots = document.getElementById('dots');
 
     var startDate = new Date(2018, 5, 15).getTime();
     var comingSoon = $(".coming-soon");
@@ -56,20 +135,6 @@ $(document).ready(function() {
 
     var welcomeSection = $(".welcome-section");
     var welcomeExplore = $(".welcome-explore");
-
-    for( var i = 0; i < carouselCount; i ++ ) {
-        dots.innerHTML += "<span class='dot' id='" + i + "'></span>";
-    }
-
-    currentSlide= 0;
-    dot = document.getElementsByClassName("dot");
-
-    carousel[0].classList.add("active");
-    dot[0].classList.add("dot-active");
-
-    setInterval(function() {
-        plusSlides(1);
-    }, 5000);
 
     setTimeout(function() {
         welcomeSection.removeClass("welcome-content-hidden");
@@ -99,10 +164,8 @@ $(document).ready(function() {
         }
     }, 1000);
 
-    $(".dot").click(function() {
-        tempSlide = parseInt($(this).attr("id"));
-        plusSlides(0);
-    });
+    initialiseTiles();
+    animateDuration = 700;
 
     $(".smooth").click(function(ev) {
         ev.preventDefault();
@@ -123,6 +186,8 @@ $(document).ready(function() {
 
         // initialiseTop();
         // prevScrollLocation = $(this).scrollTop();
+
+        initialiseTiles();
 
     });
 
