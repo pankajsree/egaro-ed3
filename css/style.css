@@ -56,6 +56,71 @@ div { display: inline-block; }
     font-size: larger;
 }
 
+.bb-short-underline {
+    border-bottom: 0.15rem solid #000;
+    -o-border-image: linear-gradient(to right,  #000, transparent);
+       border-image: -webkit-gradient(linear,  left top, right top,  from(#000), to(transparent));
+       border-image: linear-gradient(to right,  #000, transparent);
+    border-image-slice: 1;
+    padding-bottom: 0.5rem;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+
+.bb-short-underline-white {
+    border-bottom: 0.15rem solid #fff;
+    -o-border-image: linear-gradient(to right,  #fff, transparent);
+       border-image: -webkit-gradient(linear,  left top, right top,  from(#fff), to(transparent));
+       border-image: linear-gradient(to right,  #fff, transparent);
+    border-image-slice: 1;
+    padding-bottom: 0.5rem;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.bb-short-underline-white-center {
+    border-bottom: 0.15rem solid #fff;
+    -o-border-image: linear-gradient(to right, transparent, #fff, transparent);
+       border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#fff), to(transparent));
+       border-image: linear-gradient(to right, transparent, #fff, transparent);
+    border-image-slice: 1;
+    padding-bottom: 0.5rem;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.bb-short-underline-black-center {
+    border-bottom: 0.15rem solid #000;
+    -o-border-image: linear-gradient(to right, transparent, #000, transparent);
+       border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#000), to(transparent));
+       border-image: linear-gradient(to right, transparent, #000, transparent);
+    border-image-slice: 1;
+    padding-bottom: 0.5rem;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.bb-1 {
+    border-bottom: 1px solid #ccc;
+    -o-border-image: linear-gradient(to right, transparent, #aaa, transparent);
+       border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#aaa), to(transparent));
+       border-image: linear-gradient(to right, transparent, #aaa, transparent);
+    border-image-slice: 1;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.page-title {
+    background-color: #aaa;
+    text-align: center;
+}
+
 /************     Hamburger     *************/
 
 #hamburger-container {
@@ -113,7 +178,7 @@ div { display: inline-block; }
 }
 
 #toggle-soc-bar { position: fixed; top:50vh; right: -1.5rem; font-size: 1rem; text-align: left; line-height: 3rem; padding-left: 0.5rem; width: 3rem; height: 3rem; z-index: 9995; border-radius: 50%; background-color: #aaa; color: white; cursor: pointer; display: none;}
-#cross { position: fixed; top: calc(50vh - 3.7rem); width: 0.75rem; height: 0.75rem; z-index: 9996; right: 1rem; display: none; cursor: pointer; }
+#cross { position: fixed; top: calc(50vh - 3.7rem); width: 0.75rem; height: 0.75rem; z-index: 9996; right: 0.95rem; display: none; cursor: pointer; }
 #cross i { background-color: #fff; padding: 0.2rem; }
 #soc-bar {  position: fixed; background-color: #fff; top: calc(50vh - 2.5rem); right: 0; z-index: 9995; display: none; }
 #soc-bar a { text-decoration: none; color: #111; }
@@ -324,12 +389,25 @@ footer .sitemap .row {
 .underline { text-decoration: underline; }
 
 #home {
-    height: 100vh; width: 100%;
+    height: 100vh;
+    width: 100%;
 }
 
 #my-carousel {
     width: 100%;
     height: 100%;
+    text-align: center;
+    /* overflow: hidden; */
+}
+
+.mask {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 90vh;
+    left: 0;
+    top: 0;
+    z-index: -1;
 }
 
 .carousel-indicators {
@@ -349,25 +427,43 @@ footer .sitemap .row {
 }
 
 .carousel-inner {
-    height: 90vh;
+    width: 100%;
+    padding-bottom: 10vh;
+    text-align: center;
 }
 
 .carousel-item {
-    height: 100%;
+    height: 90vh;
+    width: 100%;
+    text-align: center;
 }
 
-.carousel-inner img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
-    width: 100%;
+.carousel-item img {
     height: 100%;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousel-control-next {
+    justify-content: right;
+    padding-right: 2rem;
+}
+
+.carousel-control-prev {
+    justify-content: left;
+    padding-left: 2rem;
+}
+
+.carousel-control-prev i, .carousel-control-next i {
+    font-size: 3.5rem;
 }
 
 .head-box { font-family: var(--font); font-size: 2.2rem; color: white; padding: 1rem 0; color: #111; letter-spacing: 3px; display: block; }
 .left-align { text-align: left; }
-
+.head-box-fest-dir { font-family: var(--font); font-size: 1.4rem; color: white; padding: 1rem 0; color: #111; letter-spacing: 3px; display: block; }
+.dir-fest-img .head-box-fest-dir { display: none; }
 
 .customed-fluid {
     padding: 0;
@@ -431,8 +527,8 @@ footer .sitemap .row {
 @media only screen and (max-width: 767px) {
     .dir-fest-img { text-align: center; }
     .words { padding-top: 1rem; }
-    .dir-fest-img .head-box { display: block; }
-    .dir-fest-words .head-box { display: none; }
+    .dir-fest-img .head-box-fest-dir { display: block; }
+    .dir-fest-words .head-box-fest-dir { display: none; }
     .dir-name, .dir-desc, .mobile-mem-social { width: 100%; }
     .mobile-mem-social {
         display: block;
@@ -460,3 +556,169 @@ footer .sitemap .row {
 }
 
 .my-container-fluid { padding: 0 10%; }
+
+#sitemap-body {
+    background-color: #ddd;
+}
+#sitemap-body .page-title {
+    background-color: transparent;
+    text-align: left;
+    padding-top: 10rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+#sitemap-body nav {
+    background-color: #111;
+}
+.no-pad {
+    padding: 0 !important;
+}
+
+.list-square {
+    list-style: square;
+}
+
+ul.cus-ul {
+    list-style: none;
+}
+
+ul.cus-ul li:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 2px;
+    background-color: #888;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.pad-left-1 {
+    padding-left: 1rem !important;
+}
+
+.pad-top-1 {
+    padding-top: 1rem;
+}
+
+.pad-btm-5 {
+    padding-bottom: 5rem;
+}
+
+#sitemap-ul {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+#sitemap-ul a {
+    color: var(--chocolate);
+    text-decoration: underline;
+}
+
+#sitemap-ul a:hover {
+    color: var(--red);
+}
+
+
+body {
+    /* background-image: url("../images/bg.png"); */
+}
+
+.mar-v-4 {
+    margin: 4rem 0;
+}
+
+#counter-container {
+    background-color: #ddd;
+}
+
+.countdown-container-main {
+    width: 100%;
+    text-align: center;
+}
+
+#counter {
+    width: 100%;
+    /* padding-top: 5rem;
+    padding-bottom: 5rem; */
+    padding: 5rem;
+}
+
+@media only screen
+    and (max-width: 767px) {
+    #counter {
+        padding: 5rem 0;
+    }
+}
+
+.date-venue {
+    display: block;
+    /* margin-top: 2rem; */
+    margin: 2rem 0;
+}
+
+.img-res {
+    width: 100%;
+    height: auto;
+}
+
+#time-left {
+    display: block;
+}
+
+#time-left .text {
+    font-size: 1.25rem;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 1px; */
+    padding-top: 0.25rem;
+    font-weight: bold;
+    border-top: 1px solid #141516;
+    border-image: linear-gradient(to right, transparent, #000, transparent);
+    border-image-slice: 1;
+}
+
+.dynamic {
+    font-size: 1.5rem;
+}
+
+.date-venue {
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.default-link {
+    text-decoration: underline;
+}
+
+.default-link:hover {
+    text-decoration: none;
+}
+
+#upcoming-events {
+    text-align: center;
+}
+
+.no-bullet {
+    list-style: none;
+}
+
+#upcoming-events a {
+    color: #262748;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#upcoming-events a:hover {
+    color: #141516;
+    letter-spacing: 3px;
+}
+
+#upcoming-events ul {
+    margin-top: 2rem;
+}
+
+#upcoming-events ul li {
+    padding: 0.25rem 0;
+}

@@ -95,14 +95,4 @@ $(document).ready(function() {
         $("#toggle-soc-bar").hide();
         $("#cross, #soc-bar").show();
     });
-
-    setTimeout(function() {
-        var width = $("#img-first").width() * 0.5625;
-        $(".gallery img").css("height", width + "px");
-    }, 200);
-
-    $(window).resize(function() {
-        var width = $("#img-first").width() * 0.5625;
-        $(".gallery img").css("height", width + "px");
-    });
 });

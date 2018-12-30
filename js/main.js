@@ -16,7 +16,51 @@ var socialFlag;
 var timer;
 var interval;
 
+
+/*****     coming-soon     *****/
+
+var startDate;
+var comingSoon;
+var timeLeft;
+var _1day;
+
+var now;
+var millisecDiff;
+var secDiff;
+
+var days;
+var hrs;
+var mins;
+var secs;
+
+
+
 var deviceWidth = screen.width;
+
+function mediaSize() {
+	/* Set the matchMedia */
+	if (window.matchMedia('screen and (max-width: 575px)').matches) {
+        $("#my-carousel .exception-left").each(function() {
+            var left = $(this).attr("data-left");
+            $(this).css({
+                "left": left,
+                "transform": "translateX(-" + left + ")"
+            });
+        });
+		$("#my-carousel .exception-right").each(function() {
+            var right = $(this).attr("data-right");
+            $(this).css({
+				"left": "auto",
+                "right": right,
+                "transform": "translateX(" + right + ")"
+            });
+        });
+	} else {
+	/* Reset for CSS changes – Still need a better way to do this! */
+		$("#my-carousel .exception-left").removeAttr('style');
+		$("#my-carousel .exception-right").removeAttr('style');
+	}
+}
 
 function initialiseTop() {
     topHome = $("#home").offset().top;
@@ -25,6 +69,56 @@ function initialiseTop() {
 }
 
 $(document).ready(function() {
+	mediaSize();
+    // $("#my-carousel .exception").each(function() {
+    //     var left = $(this).attr("data-left");
+    //     $(this).css({
+    //         "left": left,
+    //         "transform": "translateX(" + left + ")"
+    //     });
+    // });
+
+    if($( window ).width() > 991) {
+        $("#my-carousel img").each(function() {
+            var item = $(this).attr("data-item");
+            $(this).attr("src", "images/carousel/" + item + ".jpg");
+        });
+    }
+    else {
+        $("#my-carousel img").each(function() {
+            var item = $(this).attr("data-item");
+            $(this).attr("src", "images/carousel/sm/" + item + ".jpg");
+        });
+    }
+
+    startDate = new Date(2018, 11, 28).getTime();
+    _1day = 3600 * 24;
+
+    comingSoon = $(".coming-soon");
+    timeLeft = $("#time-left");
+
+    var countDown = setInterval(function() {
+        now = new Date().getTime();
+        millisecDiff = startDate - now;
+        secDiff = millisecDiff / 1000;
+        if(secDiff > 0) {
+            days = Math.floor(secDiff / _1day);
+            hrs = Math.floor((secDiff % _1day) / 3600);
+            mins = Math.floor((secDiff % 3600) / 60);
+            secs = Math.floor(secDiff % 60);
+            $("#days").html(days);
+            $("#hrs").html(hrs);
+            $("#mins").html(mins);
+            $("#secs").html(secs);
+        }
+        else {
+            clearInterval(countDown);
+            $("#days").html("00");
+            $("#hrs").html("00");
+            $("#mins").html("00");
+            $("#secs").html("00");
+        }
+    }, 1000);
 
     if(deviceWidth < 576) {
         $("#call-one").attr("href", "tel:+91-381-2383512");
@@ -74,7 +168,8 @@ $(document).ready(function() {
     });
 
     $(window).resize(function() {
-        if($( document ).width() > 767) {
+        mediaSize();
+        if($( window ).width() > 767) {
             if(!($('#hamburger-container').is(':hidden'))) {
                 $("#one").css({
                     "transform": "rotate(0)",
@@ -94,6 +189,18 @@ $(document).ready(function() {
         }
         else {
             $("#hamburger-container").show();
+        }
+        if($( window ).width() > 991) {
+            $("#my-carousel img").each(function() {
+                var item = $(this).attr("data-item");
+                $(this).attr("src", "images/carousel/" + item + ".jpg");
+            });
+        }
+        else {
+            $("#my-carousel img").each(function() {
+                var item = $(this).attr("data-item");
+                $(this).attr("src", "images/carousel/sm/" + item + ".jpg");
+            });
         }
     });
 
@@ -186,4 +293,28 @@ $(document).ready(function() {
             $("#cross, #soc-bar, #toggle-soc-bar").hide();
         }
     });
+
+
+    $("#feedback-form").submit(function(event) {
+        event.preventDefault();
+
+        var form = $(this);
+        var data = form.serialize();
+
+        $.ajax({
+            url: "data.php",
+            type: "post",
+            data: data,
+            success: function(result) {
+                alert("Thanks for your Feedback");
+                $("#user_name").val('');
+                $("#user_email").val('');
+                $("#user_msg").val('');
+            },
+            error: function() {
+                alert("Your message couldn't be Sent !!!");
+            }
+        });
+    });
+
 });
