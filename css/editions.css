@@ -1,14 +1,3 @@
-:root {
-    --font1: 'Playfair Display', serif;
-    --font11: 'Kaushan Script', cursive;
-    --font12: 'Nanum Brush Script', cursive;
-    --font13: 'Finger Paint', cursive;
-    --font14: 'Poiret One', cursive;
-    --font15: 'Satisfy', cursive;
-    --font16: 'Josefin Slab', serif;
-    --font17: 'Lobster Two', cursive;
-}
-
  nav {background: #111; z-index: 9997; }
 
 #cross, #soc-bar {
@@ -24,7 +13,6 @@
 }
 
 .edition-profile {
-    font-family: var(--font11);
     font-size: 3rem;
 }
 
@@ -45,16 +33,11 @@
     }
 }
 
-.editions-top .edition-content-profile {
-    font-family: var(--font16);
-}
-
 .edition-content .row {
     padding: 1.5rem;
 }
 
 .edition-content .edition-heading {
-    font-family: var(--font11);
     display: block;
     font-weight: bold;
     letter-spacing: 2px;
@@ -75,14 +58,26 @@
 .artist-name {
     font-size: 1.2rem;
     padding-top: 1.5rem;
-    font-family: var(--font16);
     letter-spacing: 1.5px;
     font-weight: bold;
+}
+
+blockquote, .blockquote {
+    font-style: italic;
+    font-size: 0.9rem;
 }
 
 .blockquote-footer a {
     color: blue;
     text-decoration: underline;
+}
+
+.images {
+    text-align: center;
+}
+
+.individual-contents {
+    text-align: justify;
 }
 
 .individual-contents a {
@@ -92,6 +87,14 @@
 
 footer {
     margin-top: 4rem;
+}
+
+.row img {
+    max-width: 85%;
+}
+
+.thumb img {
+    max-width: 100%;
 }
 
 .img-res {
@@ -114,7 +117,6 @@ footer {
 
 .coming-soon {
     text-align: center;
-    font-family: var(--font11);
     font-size: 3rem;
     letter-spacing: 2.5px;
     padding: calc(50vh - 12rem) 0;

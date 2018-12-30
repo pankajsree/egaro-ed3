@@ -1,33 +1,46 @@
-:root {
-    --font1: 'Playfair Display', serif;
-    --font11: 'Kaushan Script', cursive;
-    --font12: 'Nanum Brush Script', cursive;
-    --font13: 'Finger Paint', cursive;
-    --font14: 'Poiret One', cursive;
-    --font15: 'Satisfy', cursive;
-    --font16: 'Josefin Slab', serif;
-    --font17: 'Lobster Two', cursive;
-}
-
  nav {background-color: rgba(0, 0, 0, 0.9); z-index: 9997; }
 
 #cross, #soc-bar {
     display: block;
 }
 
+#press-media-carousel-inner { background-color: #111; }
+
 .container {
     display: block;
 }
 
-.press-media-top {
-    padding-top: 8rem;
+#press-media-top {
+    padding-top: 4.625rem;
+}
+
+.carousel-inner img {
+    object-fit: contain;
+}
+
+#my-carousel {
+    height: calc(100vh - 4.625rem);
+}
+
+#my-carousel img {
+    height: calc(90vh - 4.625rem);
+    width: auto;
+}
+
+.carousel-inner {
+    height: calc(90vh - 4.625rem);
+    border-bottom: 2px solid #000;
+}
+
+.gallery {
+    text-align: center;
 }
 
 .gallery img {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border: 3px outset #111;
-    box-shadow: 1rem 1rem 2rem #000;
+    border: 3px solid #111;
+    /* box-shadow: 1rem 1rem 2rem #000; */
 }
 
 footer {

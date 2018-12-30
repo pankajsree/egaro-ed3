@@ -1,12 +1,6 @@
 :root {
-    --font1: 'Playfair Display', serif;
     --font11: 'Kaushan Script', cursive;
-    --font12: 'Nanum Brush Script', cursive;
-    --font13: 'Finger Paint', cursive;
-    --font14: 'Poiret One', cursive;
-    --font15: 'Satisfy', cursive;
     --font16: 'Josefin Slab', serif;
-    --font17: 'Lobster Two', cursive;
 }
 
  nav {background: #111; z-index: 9997; }
@@ -53,12 +47,10 @@
     object-fit: cover;
     object-position: center;
     width: 100%;
-    filter: grayscale(80%);
     transition: 0.5s;
 }
 
 .gallery img:hover {
-    filter: grayscale(0);
     transform: scale(1.05);
 }
 
@@ -66,12 +58,20 @@
     object-fit: cover;
     object-position: center;
     width: 100%;
+    height: 25rem;
+    margin: 2rem 0;
+    border: 0;
+}
+
+@media only screen and (max-width: 755px) {
+    .gallery iframe {
+        height: 15rem;
+    }
 }
 
 .gallery .images {
-    padding: 10px;
+    padding: 20px;
 }
-
 
 footer {
     margin-top: 4rem;
