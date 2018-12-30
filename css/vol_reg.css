@@ -1,0 +1,15 @@
+.reg-form {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+}
+
+ nav {background: #111; z-index: 9997; }
+
+ .container {
+     text-align: center;
+ }
+
+iframe {
+    width: 80%;
+    height: calc(100vh - 10rem);
+}

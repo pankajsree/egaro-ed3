@@ -1,8 +1,92 @@
 var socialFlag;
 
+var deviceWidth = screen.width;
+
 $(document).ready(function() {
 
+    if(deviceWidth < 576) {
+        $("#call-one").attr("href", "tel:+91-381-2383512");
+        $("#call-two").attr("href", "tel:+91-9774593537");
+        $("#call-three").attr("href", "tel:+91-9774190450");
+    }
+    else {
+        $("#call-one").attr("href", "callto:+91-381-2383512");
+        $("#call-two").attr("href", "callto:+91-9774593537");
+        $("#call-three").attr("href", "callto:+91-9774190450");
+    }
+
     socialFlag = 0;
+
+    var drop1Flag = 0;
+    var subDropFlag = 0;
+
+    $(".mobile-menu-drop").click(function() {
+        if(!($(this).siblings(".mobile-drop1").is(':hidden'))) {
+            drop1Flag = 1;
+        }
+        $(".mobile-drop1").hide();
+        if(drop1Flag != 1) {
+            $(this).siblings(".mobile-drop1").show();
+        }
+        drop1Flag = 0;
+    });
+
+    $(".final-tab").click(function() {
+        $(".mobile-drop1").hide();
+        $("#menu-expand").hide(300);
+    });
+
+    $(window).resize(function() {
+        if($( document ).width() > 767) {
+            if(!($('#hamburger-container').is(':hidden'))) {
+                $("#one").css({
+                    "transform": "rotate(0)",
+                    "top": "0"
+                });
+                $("#two").show();
+                $("#three").css({
+                    "transform": "rotate(0)",
+                    "top": "0.6rem"
+                });
+                $('#menu-expand').hide();
+                $("#hamburger-container").hide();
+                if($(window).scrollTop() < 80) {
+                    header.removeClass("header-bg-black");
+                }
+            }
+        }
+        else {
+            $("#hamburger-container").show();
+        }
+    });
+
+    $("#hamburger-container").click(function() {
+
+        $('#menu-expand').toggle();
+
+        if($('#menu-expand').is(':hidden')) {
+            $("#one").css({
+                "transform": "rotate(0)",
+                "top": "0"
+            });
+            $("#two").show();
+            $("#three").css({
+                "transform": "rotate(0)",
+                "top": "0.6rem"
+            });
+        }
+        else {
+            $("#one").css({
+                "transform": "rotate(45deg)",
+                "top": "0.4rem"
+            });
+            $("#two").hide();
+            $("#three").css({
+                "transform": "rotate(-45deg)",
+                "top": "0.4rem"
+            });
+        }
+    });
 
     $("#cross").click(function() {
         $("#cross, #soc-bar").hide();
@@ -15,12 +99,7 @@ $(document).ready(function() {
         $("#cross, #soc-bar").show();
     });
 
-    $(".modal").click(funtion(ev) {
-        ev.preventDefault();
-        $("#modal-bg").show();
-    });
-
-    var underlineTabs = $(".tab-hover");
+    // var underlineTabs = $(".tab-hover");
 
     if( $(window).scrollTop() > 1000 ) {
         $("#scroll-up").show();

@@ -49,8 +49,23 @@
     font-family: var(--font16);
 }
 
-.gallery {
-    padding-top: 5.5rem;
+.gallery img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    filter: grayscale(80%);
+    transition: 0.5s;
+}
+
+.gallery img:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+.gallery iframe {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
 }
 
 .gallery .images {
@@ -60,4 +75,21 @@
 
 footer {
     margin-top: 4rem;
+}
+
+.lb-dataContainer, .lb-details, .lb-data, .lb-closeContainer {
+    display: block;
+}
+
+.coming-soon {
+    text-align: center;
+    font-family: var(--font11);
+    font-size: 3rem;
+    letter-spacing: 2.5px;
+    padding: calc(50vh - 9.5rem) 0;
+    display: block;
+    margin: 0 auto;
+    transform: rotate(-20deg);
+    /* text-decoration: underline wavy; */
+    text-decoration: underline double;
 }

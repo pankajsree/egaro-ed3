@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Egaro Photo Festival</title>
@@ -18,6 +18,13 @@
         <main>
             <nav id="header" class="navbar">
                 <a class="navbar-brand" href="index.html"><img src="images/icons/favicon.png" alt="Logo" /></a>
+
+                <div id="hamburger-container">
+                    <div class="hamburger" id="one"></div>
+                    <div class="hamburger" id="two"></div>
+                    <div class="hamburger" id="three"></div>
+                </div>
+
                 <ul id="nav-menu" class="nav justify-content-center">
                     <li class="nav-item"><a href="#my-carousel" class="nav-link">Home<div class="read-more-hover-navbar"></div></a></li>
                     <li class="nav-item menu-drop">
@@ -37,7 +44,7 @@
                                     </div>
                                 </li>
                             </a>
-                            <a href="#" class="nav-link">
+                            <a href="assets/press_media.html" class="nav-link">
                                 <li>
                                     <div class="drop-container-individual">Press&nbsp;&&nbsp;Media<div class="navbar-underline"></div></div>
                                 </li>
@@ -47,51 +54,20 @@
                     <li class="nav-item menu-drop">
                         <div class="nav-link cursor-default">Archive <i class="fas fa-angle-down"></i></div>
                         <ul class="drop1">
-                            <li class="nav-item menu-drop-right">
-                                <div class="nav-link cursor-default">
-                                    <div class="drop-container-individual">Photos<div class="navbar-underline"></div></div>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="assets/archive_photos.php?edition=18_19" class="nav-link">
-                                            <div class="drop-container-individual">2018-19<div class="navbar-underline"></div></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="assets/archive_photos.php?edition=17_18" class="nav-link">
-                                            <div class="drop-container-individual">2017-18<div class="navbar-underline"></div></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="assets/archive_photos.php?edition=16_17" class="nav-link">
-                                            <div class="drop-container-individual">2016-17<div class="navbar-underline"></div></div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item menu-drop-right">
-                                <div class="nav-link cursor-default">
-                                    <div class="drop-container-individual">Videos<div class="navbar-underline"></div></div>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="assets/archive_videos.php?edition=18_19" class="nav-link">
-                                            <div class="drop-container-individual">2018-19<div class="navbar-underline"></div></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="assets/archive_videos.php?edition=17_18" class="nav-link">
-                                            <div class="drop-container-individual">2017-18<div class="navbar-underline"></div></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="assets/archive_videos.php?edition=16_17" class="nav-link">
-                                            <div class="drop-container-individual">2016-17<div class="navbar-underline"></div></div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                            <a href="assets/archive_photos.php" class="nav-link">
+                                <li>
+                                    <div class="drop-container-individual">Photos
+                                        <div class="navbar-underline"></div>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="assets/archive_videos.php" class="nav-link">
+                                <li>
+                                    <div class="drop-container-individual">Videos
+                                        <div class="navbar-underline"></div>
+                                    </div>
+                                </li>
+                            </a>
                         </ul>
                     </li>
                     <li class="nav-item menu-drop">
@@ -123,7 +99,7 @@
                     <li class="nav-item menu-drop">
                         <div class="nav-link cursor-default">Get&nbsp;involved <i class="fas fa-angle-down"></i></div>
                         <ul class="drop1">
-                            <a href="#" class="nav-link">
+                            <a href="assets/volunteer_register.php" class="nav-link">
                                 <li>
                                     <div class="drop-container-individual">Volunteer Registration
                                         <div class="navbar-underline"></div>
@@ -142,18 +118,105 @@
                 </ul>
             </nav>
 
+            <div id="menu-expand">
+                <div class="menu-expand-container">
+                    <ul id="small-menu-ul">
+                        <li class="nav-item"><a href="#my-carousel" class="nav-link final-tab">Home</a></li>
+                        <li class="nav-item">
+                            <div class="nav-link mobile-menu-drop">About us<i class="float-right fas fa-angle-down"></i></div>
+                            <ul  id="about-mobile-drop1" class="mobile-drop1">
+                                <a href="#fest-dir" class="nav-link final-tab">
+                                    <li>
+                                        <div class="drop-container-individual">Our Team</div>
+                                    </li>
+                                </a>
+                                <a href="#about-agartala" class="nav-link final-tab">
+                                    <li>
+                                        <div class="drop-container-individual">Visitor's&nbsp;Guide</div>
+                                    </li>
+                                </a>
+                                <a href="assets/press_media.html" class="nav-link final-tab">
+                                    <li>
+                                        <div class="drop-container-individual">Press&nbsp;&&nbsp;Media</div>
+                                    </li>
+                                </a>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <div class="nav-link mobile-menu-drop">Archive<i class="float-right fas fa-angle-down"></i></div>
+                            <ul id="archives-mobile-drop1" class="mobile-drop1">
+                                <a href="assets/archive_photos.php" class="nav-link">
+                                    <li>
+                                        <div class="drop-container-individual">Photos</div>
+                                    </li>
+                                </a>
+                                <a href="assets/archive_videos.php" class="nav-link">
+                                    <li>
+                                        <div class="drop-container-individual">Videos</div>
+                                    </li>
+                                </a>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <div class="nav-link mobile-menu-drop">Editions<i class="float-right fas fa-angle-down"></i></div>
+                            <ul id="editions-mobile-drop1" class="mobile-drop1">
+                                <a href="assets/editions.php?edition=18_19" class="nav-link final-tab">
+                                    <li>
+                                        <div class="drop-container-individual">2018-19</div>
+                                    </li>
+                                </a>
+                                <a href="assets/editions.php?edition=17_18" class="nav-link final-tab">
+                                    <li>
+                                        <div class="drop-container-individual">2017-18</div>
+                                    </li>
+                                </a>
+                                <a href="assets/editions.php?edition=16_17" class="nav-link final-tab">
+                                    <li>
+                                        <div class="drop-container-individual">2016-17</div>
+                                    </li>
+                                </a>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <div class="nav-link mobile-menu-drop">Get&nbsp;involved<i class="float-right fas fa-angle-down"></i></div>
+                            <ul id="contact-mobile-drop1" class="mobile-drop1">
+                                <a href="assets/volunteer_register.php" class="nav-link final-tab">
+                                    <li>
+                                        <div class="drop-container-individual">Volunteer Registration</div>
+                                    </li>
+                                </a>
+                                <a href="#contacts" class="nav-link final-tab">
+                                    <li>
+                                        <div class="drop-container-individual">Support us</div>
+                                    </li>
+                                </a>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <div class="social">
+                        <a href="https://www.facebook.com/BOINARI2016/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/egarophotofestival/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
             <div id="toggle-soc-bar"><i class="fas fa-angle-left"></i></div>
             <div id="cross">
                 <i class="far fa-times-circle"></i>
             </div>
             <div id="soc-bar">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/BOINARI2016/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/egarophotofestival/"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="far fa-envelope"></i></a>
             </div>
 
-            <a href="#home"><div id="scroll-up"><span id="scroll-up-content">&#11205;</span></div></a>
+            <a href="#home"><div id="scroll-up"><span id="scroll-up-content"><i class="fas fa-angle-up"></i></span></div></a>
 
             <div id="home" class="container-fluid customed-fluid">
                 <div id="my-carousel" class="carousel slide" data-ride="carousel">
@@ -180,45 +243,39 @@
                     </div>
 
                     <a class="carousel-control-prev" href="#my-carousel" role="button" data-slide="prev">
-                        <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span> -->
-                        <span class="arrow-half-top"></span>
-                        <span class="arrow-half-bottom"></span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
                     </a>
                     <a class="carousel-control-next" href="#my-carousel" role="button" data-slide="next">
-                        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span> -->
-                        <span class="arrow-half-top"></span>
-                        <span class="arrow-half-bottom"></span>
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
                     </a>
                 </div>
             </div>
 
-            <section class="parallax" id="about">
-                <section id="about-egaro">
-                    <div class="head-box">Egaro Photo Festival</div>
+            <section id="about">
+                <section id="about-egaro" class="my-container-fluid">
+                    <div class="head-box left-align">Egaro Photo Festival</div>
                     <p>Egaro Photo Festival incepted with the idea of showcasing photographs that challenges the widespread notion of what is a ‘good photograph’. We also aim to change the way one looks at exhibition and the way photographs can be displayed, apart from gallery space.</p>
                     <p>Every year, we shall exhibit works of eleven photographers of different genres, who are producing important and relevant photographs in the present environmental, political, cultural, and socio-economic context; hence the name Egaro ( the Bengali word for ‘Eleven’).</p>
                     <p>The festival began as ‘Egaro Chobi Utsav’ in 2016, where the works of eleven photographers of Tripura were showcased in the front lawn of Rabindra Satabarshiki Bhavan; our objective was to spread awareness about the various contemporary photographic styles and change the idea of ‘exhibition’, in Tripura. In 2017, the venue was shifted to Nazrul Kalakshetra, owing to its area, providing room for exploring intriguing and innovative exhibiting possibilities. That’s when we came up with the idea of going beyond the state boundary and showcasing works of artists from all over India. Presently, Egaro Photo Festival also aims at projecting Tripura and the great treasures of the state in terms of Art, History, Nature and Culture, along with that of other regions of India and the world.</p>
                 </section>
-                <br /><br />
-                <section id="fest-dir">
-                    <div class="fest-dir-content">
-                        <div class="dir-fest-img">
+                <section id="fest-dir" class="container">
+                    <div class="head-box">Our Team</div>
+                    <div class="row fest-dir-content">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 dir-fest-img">
                             <img src="images/team/2.jpg" alt="Fetival Director" />
                             <div class="dir-name">Arkadripta Chakraborty</div>
                             <div class="dir-desc">Festival Director</div>
                         </div>
-                        <div class="dir-fest-words">
+                        <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-xs-12 dir-fest-words">
                             <div class="head-box">Festival Director</div>
                             Arkadripta Chakraborty is a 32-year old independent photographer who currently divides his time between Guwahati,Assam and Agartala, Tripura. Having lived in Pune and Mumbai, he returned to the North-East in 2012.  Some of his earlier works include documentation of the life of Civil Death victims in Uttar Pradesh and coverage of the ethnic conflict in various parts of North East India with particular focus on western Assam, popularly known as the Chicken’s neck. In 2014, he was selected for the India Habitat Centre Fellowship for photography for his ongoing work ‘Crematoria’ and his work has been featured in various national and international publications.
                         </div>
                     </div>
                 </section>
-                <br /><br />
-                <section id="team-det">
-                    <div class="head-box">Our Team</div>
-                    <br />
+                <section id="team-det" class="my-container-fluid">
+                    <div class="head-box">Members</div>
                     <div class="members">
                         <div class="mem-det">
                             <img src="images/team/1.jpg" alt="Fetival Director" />
@@ -346,32 +403,32 @@
                         </div>
                     </div>
                 </section>
-                <section id="about-agartala">
+                <section id="about-agartala" class="my-container-fluid">
                     <div class="head-box">About Agartala</div>
                     <p>A city still in its adolescence, Agartala can be a plethora of emotions. From love to calmness, from safety to freshness and tranquillity, it’s a melting pot of various cultural and socio-political identities.</p>
 
                     <p>Lying on the banks of the Haora River, 2km from the Bangladesh border, Agartala is considered as one of the fastest developing cities of India. Blessed with rich heritage and culture, it’s a ‘place in transit’, it’s a place that makes one feel close to the bounty of nature, with a tinge of  history in it.</p>
                 </section>
-                <section id="boinari">
+                <section id="boinari" class="my-container-fluid">
                     <div class="head-box">Boinari</div>
                     <p>Boinari(meaning ‘friend’ in Kokborok) is a group of freelance artists working in their own unique fields, but sharing a collective interest and love for visual media.</p>
                     <p>We constantly try to push the boundaries of art while spreading awareness about the contemporary photography world.</p>
                 </section>
             </section>
 
-            <section class="parallax" id="contacts">
+            <section id="contacts" class="container">
                 <div class="contact-us">
                     <div class="contact-left">
                         <div class="contact-head">Support&nbsp;Us</div>
                         <form class="contact-form" action="#" method="post">
                             <label>Name<sup>*</sup></label>
-                            <input type="text" name="customer_name" required="true" placeholder="Type your awesome name" />
+                            <input type="text" name="customer_name" required="true" />
                             <br />
                             <label>Email ID<sup>*</sup></label>
-                            <input type="email" name="customer_email" required="true" placeholder="username@domain" />
+                            <input type="email" name="customer_email" required="true" />
                             <br />
                             <label>Your Message<sup>*</sup></label>
-                            <textarea name="customer_msg" rows="5" required="true" placeholder="Type Your Messsage Here ..."></textarea>
+                            <textarea name="customer_msg" rows="5" required="true" placeholder="Your Messsage ..."></textarea>
                             <br />
                             <input type="submit" name="submit" value="Send Message" />
                         </form>
@@ -381,49 +438,42 @@
         </main>
         <footer class="container-fluid">
             <div class="row">
-                <div class="col-4">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="footer-caption">About us</div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ea velit quis, amet quod! Cum voluptates corporis nesciunt, magni laudantium quibusdam harum ipsa, temporibus vitae beatae. Rem dicta, asperiores maiores.</div>
-                <div class="col-5">
+                    <p>Egaro Photo Festival incepted with the idea of showcasing photographs that challenges the widespread notion of what is a ‘good photograph’. We also aim to change the way one looks at exhibition and the way photographs can be displayed, apart from gallery space.</p>
+                    <p>Every year, we shall exhibit works of eleven&nbsp;....</p>
+                    <a class="no-text-decoration" href="#about">
+                        <div class="read-more">
+                            Read More&nbsp;&nbsp;<i class="fas fa-angle-double-right"></i>
+                            <div class="underline-footer"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-xs-12">
                     <div class="footer-caption">Contact us</div>
                     <div class="row"><div class="col-1"><i class="fas fa-home"></i></div><div class="col-11">Victor Enterprise, Old RMS Chowmuhani, Agartala, West Tripura, India (799001)</div></div>
-                    <div class="row"><div class="col-1"><i class="fab fa-facebook"></i></div><div class="col-11">prandeepgroup</div></div>
-                    <div class="row"><div class="col-1"><i class="fas fa-phone"></i></div><div class="col-11">+91-381-2383512 | +91-9774593537 | +91-9774190450</div></div>
-                    <div class="row"><div class="col-1"><i class="fas fa-envelope"></i></div><div class="col-11">help@egaro.com</div></div>
-                    <div class="row"><div class="col-1"><i class="fab fa-twitter"></i></div><div class="col-11">egarophoto</div></div>
-                    <div class="row"><div class="col-1"><i class="fas fa-globe"></i></div><div class="col-11">https://www.egarophotofestival.com</div></div>
+                    <div class="row"><div class="col-1"><i class="fas fa-phone"></i></div><div class="col-11"><a id="call-one" href="tel:+91-381-2383512">+91-381-2383512</a> | <a id="call-two" href="tel:+91-9774593537">+91-9774593537</a> | <a id="call-three" href="tel:+91-9774190450">+91-9774190450</a></div></div>
+                    <div class="row"><div class="col-1"><i class="fas fa-envelope"></i></div><div class="col-11"><a href="#">XXXXXXXXXX</a></div></div>
+                    <div class="row"><div class="col-1"><i class="fab fa-facebook"></i></div><div class="col-11"><a href="https://www.facebook.com/BOINARI2016/">BOINARI2016</a></div></div>
+                    <div class="row"><div class="col-1"><i class="fab fa-instagram"></i></div><div class="col-11"><a href="https://www.instagram.com/egarophotofestival/">egarophotofestival</a></div></div>
+                    <div class="row"><div class="col-1"><i class="fab fa-twitter"></i></div><div class="col-11"><a href="#">XXXXXXXXXX</a></div></div>
                 </div>
-                <div class="col-3">
+                <div class="sitemap col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
                     <div class="footer-caption">Sitemap</div>
                     <div class="row">
-                        <div class="col-1">
-                            <i class="fas fa-angle-right"></i>
-                        </div>
-                        <div class="col-11">Home</div>
+                        <i class="fas fa-angle-right"><span class="content">&nbsp;&nbsp;<a href="#my-carousel">Home</a></span></i>
                     </div>
                     <div class="row">
-                        <div class="col-1">
-                            <i class="fas fa-angle-right"></i>
-                        </div>
-                        <div class="col-11">About us</div>
+                        <i class="fas fa-angle-right"><span class="content">&nbsp;&nbsp;<a href="#about">About&nbsp;us</a></span></i>
                     </div>
                     <div class="row">
-                        <div class="col-1">
-                            <i class="fas fa-angle-right"></i>
-                        </div>
-                        <div class="col-11">Archives</div>
+                        <i class="fas fa-angle-right"><span class="content">&nbsp;&nbsp;<a href="assets/archive_photos.php">Photos</a></span></i>
                     </div>
                     <div class="row">
-                        <div class="col-1">
-                            <i class="fas fa-angle-right"></i>
-                        </div>
-                        <div class="col-11">Editions</div>
+                        <i class="fas fa-angle-right"><span class="content">&nbsp;&nbsp;<a href="assets/archive_videos.php">Videos</a></span></i>
                     </div>
                     <div class="row">
-                        <div class="col-1">
-                            <i class="fas fa-angle-right"></i>
-                        </div>
-                        <div class="col-11">Contact Us</div>
+                        <i class="fas fa-angle-right"><span class="content">&nbsp;&nbsp;<a href="#contacts">Contact</a></span></i>
                     </div>
                 </div>
             </div>
