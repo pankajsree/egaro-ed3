@@ -1,0 +1,63 @@
+:root {
+    --font1: 'Playfair Display', serif;
+    --font11: 'Kaushan Script', cursive;
+    --font12: 'Nanum Brush Script', cursive;
+    --font13: 'Finger Paint', cursive;
+    --font14: 'Poiret One', cursive;
+    --font15: 'Satisfy', cursive;
+    --font16: 'Josefin Slab', serif;
+    --font17: 'Lobster Two', cursive;
+}
+
+ nav {background: #111; z-index: 9997; }
+
+#cross, #soc-bar {
+    display: block;
+}
+
+.container {
+    display: block;
+}
+
+.archives-top {
+    padding-top: 8rem;
+}
+
+.edition-profile {
+    font-family: var(--font11);
+    font-size: 3rem;
+}
+
+.archives-top .media {
+    position: relative;
+}
+
+.archives-top .media .edition-profile {
+    position: absolute;
+    top: 25%;
+    transform: translateY(50%) rotate(-20deg);
+}
+
+@media only screen and (max-width: 992px) {
+    .archives-top .media .edition-profile, .archives-top .media .edition-profile {
+        position: static;
+        transform: none;
+    }
+}
+
+.archives-top .edition-content {
+    font-family: var(--font16);
+}
+
+.gallery {
+    padding-top: 5.5rem;
+}
+
+.gallery .images {
+    padding: 10px;
+}
+
+
+footer {
+    margin-top: 4rem;
+}

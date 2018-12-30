@@ -1,0 +1,104 @@
+:root {
+    --font1: 'Playfair Display', serif;
+    --font11: 'Kaushan Script', cursive;
+    --font12: 'Nanum Brush Script', cursive;
+    --font13: 'Finger Paint', cursive;
+    --font14: 'Poiret One', cursive;
+    --font15: 'Satisfy', cursive;
+    --font16: 'Josefin Slab', serif;
+    --font17: 'Lobster Two', cursive;
+}
+
+ nav {background: #111; z-index: 9997; }
+
+#cross, #soc-bar {
+    display: block;
+}
+
+.container {
+    display: block;
+}
+
+.editions-top {
+    padding-top: 8rem;
+}
+
+.edition-profile {
+    font-family: var(--font11);
+    font-size: 3rem;
+}
+
+.editions-top .media {
+    position: relative;
+}
+
+.editions-top .media .edition-profile {
+    position: absolute;
+    top: 25%;
+    transform: translateY(50%) rotate(-20deg);
+}
+
+@media only screen and (max-width: 992px) {
+    .editions-top .media .edition-profile, .editions-top .media .edition-profile {
+        position: static;
+        transform: none;
+    }
+}
+
+.editions-top .edition-content-profile {
+    font-family: var(--font16);
+}
+
+.edition-content {
+    padding-top: 3.5rem;
+}
+
+.edition-content .row {
+    padding: 1.5rem;
+}
+
+.edition-content .edition-heading {
+    font-family: var(--font11);
+    display: block;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-decoration: underline;
+}
+
+.odd {
+    background-color: #ddd;
+}
+
+.even {
+    background-color: #ccc;
+}
+
+footer {
+    margin-top: 4rem;
+}
+
+.img-res {
+    width: 4rem !important;
+    height: 4rem !important;
+    object-fit: cover;
+}
+
+.thumb-container {
+    text-align: center;
+}
+
+.thumb {
+    padding: 2.5px;
+}
+
+#modal-bg {
+    background-color: #111;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
