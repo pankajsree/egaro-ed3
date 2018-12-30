@@ -7,134 +7,256 @@
         <link rel='stylesheet' type='text/css' href='css/default.css' />
         <link rel='stylesheet' type='text/css' href='css/style.css' />
         <link rel='shortcut icon' type='image/png' href='images/icons/favicon.png' />
-        <link href="https://fonts.googleapis.com/css?family=Cagliostro|Cinzel:400,700|Cormorant+Garamond|Dancing+Script|Vollkorn|Josefin+Sans|Playfair+Display|Cute+Font" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
         <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
     </head>
     <body>
         <main>
-            <section class="welcome-section welcome-content-hidden">
-                <div class="welcome-content">
-                    <ul class="welcome-animate">
-                        <li>E</li>
-                        <li>G</li>
-                        <li>A</li>
-                        <li>R</li>
-                        <li>O</li>
-                    </ul>
-                    <ul class="welcome-desc">
-                        <li>Photo </li>
-                        <li>Festival</li>
-                    </ul>
-                    <div class="welcome-explore">Explore</div>
-                </div>
-            </section>
-
             <header id="header">
-                <a class="smooth brand header-elem" href="#home">Egaro</a>
+                <a class="smooth brand header-elem" href="#home"><img src="images/icons/favicon.png" /></a>
                 <ul class='tabs'>
-                    <a class="smooth header-elem" href="#home"><li>Home</li></a>
-                    <a class="smooth header-elem" href="#about"><li>About</li></a>
-                    <a class="header-elem" href="assets/archives.html"><li>Archive</li></a>
-                    <a class="header-elem" href="assets/events.html"><li>Events</li></a>
-                    <a class="smooth header-elem" href="#sponsors"><li>Sponsors</li></a>
-                    <a class="smooth header-elem" href="#contacts"><li>Contact Us</li></a>
-                    <a class="register" href="#">Register</a>
+                    <a class="smooth header-elem tab" href="#home"><li>Home<div class="tab-hover"></div></li></a>
+                    <a class="smooth header-elem tab" href="#about">
+                        <li class="drop">About Us<i class="fas fa-angle-down"></i><div class="tab-hover"></div>
+                            <ul>
+                                <a class="smooth" href="#fest-dir">
+                                    <li class="drop-first">Our team</li>
+                                </a>
+                                <a class="smooth" href="#about-agartala"><li>Visitor's&nbsp;Guide</li></a>
+                                <a class="smooth" href=""><li class="drop-last">Press&nbsp;&&nbsp;Media</li></a>
+                            </ul>
+                        </li>
+                    </a>
+                    <a class="header-elem tab" href="assets/archives.html">
+                        <li class="drop">Archive<i class="fas fa-angle-down"></i><div class="tab-hover"></div>
+                            <ul>
+                                <li class="drop-first">Photos</li>
+                                <li class="drop-last">Videos</li>
+                            </ul>
+                        </li>
+                    </a>
+                    <a class="header-elem tab" href="assets/archives.html">
+                        <li class="drop">Edition<i class="fas fa-angle-down"></i><div class="tab-hover"></div>
+                            <ul>
+                                <li class="drop-first">2018-19</li>
+                                <li>2017-18</li>
+                                <li class="drop-last">2016-17</li>
+                            </ul>
+                        </li>
+                    </a>
+                    <a class="smooth header-elem tab" href="#contacts">
+                        <li class="drop">Get Involved<i class="fas fa-angle-down"></i><div class="tab-hover"></div>
+                            <ul>
+                                <li class="drop-first">Volunteer&nbsp;Registration</li>
+                                <li class="drop-last">Support&nbsp;Us</li>
+                            </ul>
+                        </li>
+                    </a>
                 </ul>
             </header>
 
-            <section class="parallax" id="home">
-                <div class="coming-soon">
-                    Coming&nbsp;Soon<br />
-                    <div id="time-left">Pankaj</div>
-                </div>
+            <div id="toggle-soc-bar"><i class="fas fa-angle-left"></i></div>
+            <div id="cross">
+                <i class="far fa-times-circle"></i>
+            </div>
+            <div id="soc-bar">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="far fa-envelope"></i></a>
+            </div>
 
-            <!--
-                <div id="time-remaining">12 Days 12 Hours 12 Mins</div>
-            -->
-                <div id="explore">Explore</div>
-                <a id="a-explore" class="smooth unique" href="#carousel">
-                    <div id="btn-down"><i class="fas fa-angle-down"></i></div>
-                </a>
-            </section>
+            <a class="smooth" href="#home"><div id="scroll-up"><span id="scroll-up-content">&#11205;</span></div></a>
 
-            <!-- <section id="scroll-up">
-                <div class='btn-scroll-up'>&#9650;</div>
-            </section> -->
-
-
-
-
-            <div id="carousel">
-                <div class="slides active">
-                    <img src="images/3.jpg" alt="Image 1" />
-                    <div class="carousel-text">Content Details(if any)</div>
+            <div id="home">
+                <div class="slides">
+                    <img src="images/carousel/2.jpg" alt="Image 2" />
                 </div>
                 <div class="slides">
-                    <img src="images/11.jpg" alt="Image 2" />
-                    <div class="carousel-text">Content Details(if any)</div>
+                    <img src="images/carousel/3.jpg" alt="Image 3" />
                 </div>
                 <div class="slides">
-                    <img src="images/models/5.jpg" alt="Image 3" />
-                    <div class="carousel-text">Content Details(if any)</div>
+                    <img src="images/carousel/4.jpg" alt="Image 4" />
                 </div>
                 <div class="slides">
-                    <img src="images/models/3.jpg" alt="Image 4" />
-                    <div class="carousel-text">Content Details(if any)</div>
+                    <img src="images/carousel/5.jpg" alt="Image 4" />
                 </div>
 
-                <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
-                <div class="next" onclick="plusSlides(1)">&#10095;</div>
+                <div class="prev" onclick="plusSlides(-1, 1)">&#10094;</div>
+                <div class="next" onclick="plusSlides(1, 1)">&#10095;</div>
 
-                <div class="dots">
-                    <span class="dot dot-active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+                <div id="dots"></div>
+
             </div>
 
 
             <section class="parallax" id="about">
-                <section id="boinari">
-
-                    <div class="head-box">Boinari</div>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin mattis egestas. Etiam vitae mollis dolor. Vivamus elementum vestibulum tellus vel pretium. In rutrum nulla eu tellus convallis, sed porta arcu vestibulum. Mauris vel magna ultrices, porta ipsum vel, varius diam. Nunc nec laoreet metus, et egestas nunc. Nam feugiat tristique placerat. Suspendisse potenti. Morbi quam ante, ornare in lacus vitae, posuere tincidunt metus. Quisque id varius purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi porttitor elementum neque eu aliquet. Aliquam at libero sed ligula luctus eleifend non id lorem. Vestibulum ornare risus tortor, et tristique libero blandit quis. Donec in mauris in neque porta semper. Morbi tempus lorem vitae tempus imperdiet.</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin mattis egestas. Etiam vitae mollis dolor. Vivamus elementum vestibulum tellus vel pretium. In rutrum nulla eu tellus convallis, sed porta arcu vestibulum. Mauris vel magna ultrices, porta ipsum vel, varius diam. Nunc nec laoreet metus, et egestas nunc. Nam feugiat tristique placerat. Suspendisse potenti. Morbi quam ante, ornare in lacus vitae, posuere tincidunt metus. Quisque id varius purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi porttitor elementum neque eu aliquet. Aliquam at libero sed ligula luctus eleifend non id lorem. Vestibulum ornare risus tortor, et tristique libero blandit quis. Donec in mauris in neque porta semper. Morbi tempus lorem vitae tempus imperdiet.</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin mattis egestas. Etiam vitae mollis dolor. Vivamus elementum vestibulum tellus vel pretium. In rutrum nulla eu tellus convallis, sed porta arcu vestibulum. Mauris vel magna ultrices, porta ipsum vel, varius diam. Nunc nec laoreet metus, et egestas nunc. Nam feugiat tristique placerat. Suspendisse potenti. Morbi quam ante, ornare in lacus vitae, posuere tincidunt metus. Quisque id varius purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi porttitor elementum neque eu aliquet. Aliquam at libero sed ligula luctus eleifend non id lorem. Vestibulum ornare risus tortor, et tristique libero blandit quis. Donec in mauris in neque porta semper. Morbi tempus lorem vitae tempus imperdiet.</p>
-
+                <section id="about-egaro">
+                    <div class="head-box">Egaro Photo Festival</div>
+                    <p>Egaro Photo Festival incepted with the idea of showcasing photographs that challenges the widespread notion of what is a ‘good photograph’. We also aim to change the way one looks at exhibition and the way photographs can be displayed, apart from gallery space.</p>
+                    <p>Every year, we shall exhibit works of eleven photographers of different genres, who are producing important and relevant photographs in the present environmental, political, cultural, and socio-economic context; hence the name Egaro ( the Bengali word for ‘Eleven’).</p>
+                    <p>The festival began as ‘Egaro Chobi Utsav’ in 2016, where the works of eleven photographers of Tripura were showcased in the front lawn of Rabindra Satabarshiki Bhavan; our objective was to spread awareness about the various contemporary photographic styles and change the idea of ‘exhibition’, in Tripura. In 2017, the venue was shifted to Nazrul Kalakshetra, owing to its area, providing room for exploring intriguing and innovative exhibiting possibilities. That’s when we came up with the idea of going beyond the state boundary and showcasing works of artists from all over India. Presently, Egaro Photo Festival also aims at projecting Tripura and the great treasures of the state in terms of Art, History, Nature and Culture, along with that of other regions of India and the world.</p>
                 </section>
+                <br /><br />
                 <section id="fest-dir">
-                    <div class="head-box">Festival Director</div>
-                    <br />
-                    <img src="images/7.jpg" alt="Fetival Director" />
-                    <div class="dir-name">Mrs Whitney Johns</div>
-                    <div class="dir-desc">Festival Director Description</div>
+                    <div class="fest-dir-content">
+                        <div class="dir-fest-img">
+                            <img src="images/team/2.jpg" alt="Fetival Director" />
+                            <div class="dir-name">Arkadripta Chakraborty</div>
+                            <div class="dir-desc">Festival Director</div>
+                        </div>
+                        <div class="dir-fest-words">
+                            <div class="head-box">Festival Director</div>
+                            Arkadripta Chakraborty is a 32-year old independent photographer who currently divides his time between Guwahati,Assam and Agartala, Tripura. Having lived in Pune and Mumbai, he returned to the North-East in 2012.  Some of his earlier works include documentation of the life of Civil Death victims in Uttar Pradesh and coverage of the ethnic conflict in various parts of North East India with particular focus on western Assam, popularly known as the Chicken’s neck. In 2014, he was selected for the India Habitat Centre Fellowship for photography for his ongoing work ‘Crematoria’ and his work has been featured in various national and international publications.
+                        </div>
+                    </div>
                 </section>
+                <br /><br />
                 <section id="team-det">
                     <div class="head-box">Our Team</div>
                     <br />
                     <div class="members">
-                        <img src="images/8.jpg" alt="Fetival Director" />
-                        <div class="dir-name">Mrs Whitney Johns</div>
-                        <div class="dir-desc">Marketing Manager</div>
+                        <div class="mem-det">
+                            <img src="images/team/1.jpg" alt="Fetival Director" />
+                            <div class="mem-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="mem-det-container">
+                            <div class="dir-name">Partha Pratim Ganguly</div>
+                            <div class="dir-desc">Marketing Manager</div>
+                        </div>
                     </div>
                     <div class="members">
-                        <img src="images/8.jpg" alt="Fetival Director" />
-                        <div class="dir-name">Mrs Whitney Johns</div>
-                        <div class="dir-desc">Marketing Manager</div>
+                        <div class="mem-det">
+                            <img src="images/team/3.jpg" alt="Fetival Director" />
+                            <div class="mem-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="mem-det-container">
+                            <div class="dir-name">Sayandeep Roy</div>
+                            <div class="dir-desc">Marketing Manager</div>
+                        </div>
                     </div>
                     <div class="members">
-                        <img src="images/8.jpg" alt="Fetival Director" />
-                        <div class="dir-name">Mrs Whitney Johns</div>
-                        <div class="dir-desc">Marketing Manager</div>
+                        <div class="mem-det">
+                            <img src="images/team/4.jpg" alt="Fetival Director" />
+                            <div class="mem-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="mem-det-container">
+                            <div class="dir-name">Diptanil Das</div>
+                            <div class="dir-desc">Marketing Manager</div>
+                        </div>
                     </div>
+                    <div class="members">
+                        <div class="mem-det">
+                            <img src="images/team/5.jpg" alt="Fetival Director" />
+                            <div class="mem-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="mem-det-container">
+                            <div class="dir-name">Neal Bhaumik</div>
+                            <div class="dir-desc">Marketing Manager</div>
+                        </div>
+                    </div>
+                    <div class="members">
+                        <div class="mem-det">
+                            <img src="images/team/6.jpg" alt="Fetival Director" />
+                            <div class="mem-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="mem-det-container">
+                            <div class="dir-name">Aniket Nag</div>
+                            <div class="dir-desc">Marketing Manager</div>
+                        </div>
+                    </div>
+                    <div class="members">
+                        <div class="mem-det">
+                            <img src="images/team/7.jpg" alt="Fetival Director" />
+                            <div class="mem-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="mem-det-container">
+                            <div class="dir-name">Anurab Dhar</div>
+                            <div class="dir-desc">Marketing Manager</div>
+                        </div>
+                    </div>
+                    <div class="members">
+                        <div class="mem-det">
+                            <img src="images/team/8.jpg" alt="Fetival Director" />
+                            <div class="mem-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="mem-det-container">
+                            <div class="dir-name">Animikh Chakraborty</div>
+                            <div class="dir-desc">Marketing Manager</div>
+                        </div>
+                    </div>
+                    <div class="members">
+                        <div class="mem-det">
+                            <img src="images/team/9.jpg" alt="Fetival Director" />
+                            <div class="mem-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="mem-det-container">
+                            <div class="dir-name">Subhrangshu B Chowdhury</div>
+                            <div class="dir-desc">Marketing Manager</div>
+                        </div>
+                    </div>
+                    <div class="members">
+                        <div class="mem-det">
+                            <img src="images/team/10.jpg" alt="Fetival Director" />
+                            <div class="mem-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="mem-det-container">
+                            <div class="dir-name">Abhijit Deb</div>
+                            <div class="dir-desc">Marketing Manager</div>
+                        </div>
+                    </div>
+                </section>
+                <section id="about-agartala">
+                    <div class="head-box">About Agartala</div>
+                    <p>A city still in its adolescence, Agartala can be a plethora of emotions. From love to calmness, from safety to freshness and tranquillity, it’s a melting pot of various cultural and socio-political identities.</p>
+
+                    <p>Lying on the banks of the Haora River, 2km from the Bangladesh border, Agartala is considered as one of the fastest developing cities of India. Blessed with rich heritage and culture, it’s a ‘place in transit’, it’s a place that makes one feel close to the bounty of nature, with a tinge of  history in it.</p>
+                </section>
+                <section id="boinari">
+                    <div class="head-box">Boinari</div>
+                    <p>Boinari(meaning ‘friend’ in Kokborok) is a group of freelance artists working in their own unique fields, but sharing a collective interest and love for visual media.</p>
+                    <p>We constantly try to push the boundaries of art while spreading awareness about the contemporary photography world.</p>
                 </section>
             </section>
             <section class="parallax" id="sponsors">
+                <div class="sponsor-header">Sponsors</div>
                 <div class="sponsor-list">
                     <div class="sponsor-type">Media Partners</div>
                     <img src="images/sponsors/bigfm.jpg" alt="Sponsor Name" />
@@ -168,58 +290,48 @@
                     <img src="images/sponsors/allen.jpg" alt="Sponsor Name" />
                 </div>
                 <div class="salutation">
-                    Individual & Family Sponsors <span class="welcome">WELCOME</span>
-                    <div class="thank">Thank you all for supporting us</div>
+                    Individuals & Organisational Sponsors are welcome
+                    <div class="thank">Thank you for supporting us</div>
                     <div id="become-sponsor">Become a Sponsor</div>
                 </div>
             </section>
             <section class="parallax" id="contacts">
                 <div class="contact-us">
                     <div class="contact-left">
-                        <div class="contact-head">Contact&nbsp;Us</div>
+                        <div class="contact-head">Support&nbsp;Us</div>
                         <form class="contact-form" action="#" method="post">
-                            <label>Name</label>
-                            <input type="text" name="customer_name" placeholder="Type your awesome name" />
+                            <label>Name<sup>*</sup></label>
+                            <input type="text" name="customer_name" required="true" placeholder="Type your awesome name" />
                             <br />
-                            <label>Email ID</label>
-                            <input type="email" name="customer_email" placeholder="username@domain" />
+                            <label>Email ID<sup>*</sup></label>
+                            <input type="email" name="customer_email" required="true" placeholder="username@domain" />
                             <br />
-                            <label>Your Message</label>
-                            <textarea name="customer_msg" rows="5" placeholder="Type Your Messsage Here ..."></textarea>
+                            <label>Your Message<sup>*</sup></label>
+                            <textarea name="customer_msg" rows="5" required="true" placeholder="Type Your Messsage Here ..."></textarea>
                             <br />
-                            <input type="submit" name="submit" value="Send Message Now" />
+                            <input type="submit" name="submit" value="Send Message" />
                         </form>
-                    </div>
-                    <div class="contact-right">
-                        <div class="contact-head">Find&nbsp;Us&nbsp;At</div>
-                        <i class="fab fa-facebook"><span>&nbsp;&nbsp;Facebook</span></i>
-                        <i class="fab fa-instagram"><span>&nbsp;&nbsp;Instagram</span></i>
-                        <i class="fab fa-twitter"><span>&nbsp;&nbsp;Twitter</span></i>
-                        <i class="fab fa-linkedin"><span>&nbsp;&nbsp;LinkedIn</span></i>
-                        <i class="far fa-envelope"><span>&nbsp;&nbsp;help@egaro.in</span></i>
-                        <i class="fas fa-phone"><span>&nbsp;&nbsp;+91-9774590725</span></i>
                     </div>
                 </div>
             </section>
         </main>
         <footer>
             <div class="address">
-                <div class="footer-brand">Egaro Photo Festival Pvt Ltd.</div>
+                <div class="footer-brand">Egaro Photo Festival</div>
                 <address>
-                    Plot No. RZ 154/284, 1st Floor, Street Number 2 Geetanjali Park<br />
-                    Agartala, West Tripura, India (799001)<br />
-                    +91-9774590725
+                    Victor Enterprise<br /><br />
+                    Old RMS Chowmuhani, Agartala, West Tripura, India (799001)<br /><br />
+                    +91-381-2383512 | +91-9774593537 | +91-9774190450
                 </address>
             </div>
             <div class="footer-social">
                 <i class="fab fa-facebook"><span>&nbsp;&nbsp;Facebook</span></i>
                 <i class="fab fa-instagram"><span>&nbsp;&nbsp;Instagram</span></i>
                 <i class="fab fa-twitter"><span>&nbsp;&nbsp;Twitter</span></i>
-                <i class="fab fa-linkedin"><span>&nbsp;&nbsp;LinkedIn</span></i>
                 <i class="far fa-envelope"><span>&nbsp;&nbsp;help@egaro.in</span></i>
             </div>
         </footer>
         <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-    <div style='text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;display:block !important;'><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website_shelly-configuratio&amp;utm_content=footer_img"><img src="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"  alt="www.000webhost.com"></a></div></body>
+    </body>
 </html>

@@ -1,8 +1,12 @@
+<?php
+    $edition = $_GET['edition'];
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Egaro - Archives</title>
+        <title>Gallery</title>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <link rel='stylesheet' type='text/css' href='../css/default.css' />
         <link rel='stylesheet' type='text/css' href='../css/style.css' />
@@ -11,8 +15,9 @@
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
         <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     </head>
-    <body id="archives-page">
+    <body id="gallery-page">
         <header id="header">
             <a class="smooth brand header-elem" href="../index.html"><img src="../images/icons/favicon.png" /></a>
             <ul class='tabs'>
@@ -26,7 +31,7 @@
                         </ul>
                     </li>
                 </a>
-                <a class="header-elem tab" href="#">
+                <a class="header-elem tab" href="archives.html">
                     <li class="drop">Archive<span>&#11206;</span><div class="tab-hover"></div>
                         <ul>
                             <li class="drop-first">Photos</li>
@@ -54,34 +59,55 @@
             </ul>
         </header>
         <main>
-            <div class="center-gallery">
-                <a href="gallery.php?edition=2016_17">
-                    <div class="gallery" id="one">
-                        <div class="gallery-text"><img src="../images/icons/favicon_gallery.png" alt="Egaro"> 2016-17
-                            <br />
-                            <div class="gallery-underline"></div>
-                        </div>
-                    </div>
-                </a>
-                <a href="gallery.php?edition=2017_18">
-                    <div class="gallery" id="two">
-                        <div class="gallery-text"><img src="../images/icons/favicon_gallery.png" alt="Egaro"> 2017-18
-                            <br />
-                            <div class="gallery-underline"></div>
-                        </div>
-                    </div>
-                </a>
-                <a href="gallery.php?edition=2018_19">
-                    <div class="gallery" id="three">
-                        <div class="gallery-text"><img src="../images/icons/favicon_gallery.png" alt="Egaro"> 2018-19
-                            <br />
-                            <div class="gallery-underline"></div>
-                        </div>
-                    </div>
-                </a>
+            <div class="container gallery-container">
+                <?php
+                    if($edition == "2016_17") {
+                        for($i=1; $i<10; $i++) {
+                            echo "<div class='row'>";
+                            for($j=0; $j<3; $j++) {
+                                echo "
+                                    <div class='col-lg'>
+                                        <img class='mar-top-bottom img-fluid' src='../images/archives/2016-17/" . $i  . ".jpg' alt='image' />
+                                    </div>
+                                    ";
+                                    $i++;
+                            }
+                            echo "</div>";
+                        }
+                    }
+                    else if($edition == "2017_18") {
+                        for($i=1; $i<10; $i++) {
+                            echo "<div class='row'>";
+                            for($j=0; $j<3; $j++) {
+                                echo "
+                                    <div class='col-lg'>
+                                        <img class='mar-top-bottom img-fluid' src='../images/archives/2017-18/" . $i  . ".jpg' alt='image' />
+                                    </div>
+                                    ";
+                                    $i++;
+                            }
+                            echo "</div>";
+                        }
+                    }
+                    else if($edition == "2018_19") {
+                        for($i=1; $i<10; $i++) {
+                            echo "<div class='row'>";
+                            for($j=0; $j<3; $j++) {
+                                echo "
+                                    <div class='col-lg'>
+                                        <img class='mar-top-bottom img-fluid' src='../images/archives/2017-18/" . $i  . ".jpg' alt='image' />
+                                    </div>
+                                    ";
+                                    $i++;
+                            }
+                            echo "</div>";
+                        }
+                    }
+                    else {
+                        echo "NOT Available !!!";
+                    }
+                ?>
             </div>
         </main>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
-        <script type="text/javascript" src="../js/archives.js"></script>
     </body>
 </html>
